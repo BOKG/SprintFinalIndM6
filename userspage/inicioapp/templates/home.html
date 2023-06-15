@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block title %} Home {% endblock title %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+<h1 class="text-center h1-h"> Bienvenido! {{ user.username }}</h1>
+
+{% else %}
+<h1 class="text-center h1-h"> Hola extraño! </h1>
+<p class= "text-center"> Aún no te has <a  href='registro'>registrado<a>, pero mientras tanto, disfruta de estas imágenes. </p>
+
+<div class="c-b">
+        <input type="radio" name="position" checked />
+        <input type="radio" name="position" />
+        <input type="radio" name="position" />
+        <input type="radio" name="position" />
+        <input type="radio" name="position" />
+        <main id="carousel">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+        </main>
+</div>
+{% endif %}
+
+{% endblock  %}
+
