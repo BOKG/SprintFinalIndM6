@@ -4,6 +4,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.urls import reverse_lazy
+from .forms import UsuarioForm
 
 
 class Home(View):
@@ -27,18 +28,23 @@ class Usuarios(View):
 
 
 class EditarUsuario(View):
+
     def get(self, request, usuario_id):
         usuario = get_object_or_404(User, id=usuario_id)
-        form = UserChangeForm(instance=usuario)
+        form = UsuarioForm(instance=usuario)
         return render(request, 'editar_usuario.html', {'form': form, 'usuario': usuario})
 
     def post(self, request, usuario_id):
         usuario = get_object_or_404(User, id=usuario_id)
-        form = UserChangeForm(request.POST, instance=usuario)
+        form = UsuarioForm(request.POST)
         if form.is_valid():
-            form.save()  # Guardar los cambios en el usuario
-            # Redirigir a la página de usuarios o a donde desees
+            print("por aqui pase")
+            usuario.first_name = form.cleaned_data['first_name']
+            usuario.last_name = form.cleaned_data['last_name']
+            usuario.email = form.cleaned_data['email']
+            usuario.save()
             return redirect('usuarios')
+        print(form.errors)
         return render(request, 'editar_usuario.html', {'form': form, 'usuario': usuario})
 
 
