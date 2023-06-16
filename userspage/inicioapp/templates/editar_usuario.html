@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{%block title %}Editar usuario{% endblock %}
+
+
+
+{% block contenido %}
+
+<h1>Editar Usuario</h1>
+<form method="post" class="user-form">
+  {% csrf_token %}
+  <div class="form-field">
+    <label for="{{ form.username.id_for_label }}">Username:</label>
+    {{ form.username }}
+  </div>
+  <div class="form-field">
+    <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+    {{ form.first_name }}
+  </div>
+  <div class="form-field">
+    <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+    {{ form.last_name }}
+  </div>
+  <div class="form-field">
+    <label for="{{ form.email.id_for_label }}">Email:</label>
+    {{ form.email }}
+  </div>
+  <div class="form-field">
+    <label for="id_grupo">Grupo:</label>
+    <select id="id_grupo" name="groups">
+      <option value="viewers" {% if form.groups.value == 'viewers' %}selected{% endif %}>Viewers</option>
+      <option value="soporte" {% if form.groups.value == 'soporte' %}selected{% endif %}>Soporte</option>
+    </select>
+  </div>
+  <input type="submit" value="Guardar" class="default" name="_save">
+{% endblock %}

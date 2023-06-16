@@ -1,1 +1,2 @@
-.abpvenv/*
+.abpvenv/
+.requisitos.py

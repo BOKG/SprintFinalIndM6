@@ -1,85 +1,52 @@
-# EJERCICIO 6_6 - LOGIN/LOGOUT GUIDO SAAVEDRA
+# Sprint Final M6 - Awakelab
 
 # REQUERIMIENTOS:
 
-1. Identifique dos grupos de usuarios de su aplicación.
-2. En este sentido, debe crear dos usuarios de cada grupo.
-3. Cada grupo tiene permisos diferenciados de acuerdo a sus características particulares. 
-4. Es importante que en un archivo README.txt den cuenta de una reflexión que justifique los permisos diferenciados.
-5. Los usuarios se deben crear de forma dinámica mediante un formulario,
-para realizar esto, debe buscar la información necesaria en la documentación de Django y en las cápsulas de la sesión.
-6. Verifique que los usuarios quedan registrados en la página de administración de Django.
+1. - Levantar al menos dos templates:
+  Crea dos archivos HTML en la carpeta templates de tu proyecto Django. Por ejemplo, template1.html y template2.html. OK
+  Diseña el contenido de cada template según tus necesidades. OK
 
-Actualice su proyecto en GITHUB.
+2. - Manejar adecuadamente los archivos estáticos:
 
-# APLICACION
+  Crea una carpeta llamada static en tu proyecto Django si aún no existe. OK 
+  Coloca los archivos estáticos (CSS, JavaScript, imágenes, etc.) en la carpeta static. OK 
+  Asegúrate de que la configuración de los archivos estáticos en settings.py sea correcta. OK
 
-1. Los grupos de usuarios de mi aplicacion son los siguientes:
-    - Administrador
-    - Usuario
+3. - Integrar Bootstrap y extender las plantillas con block-content:
+  
+  Descarga los archivos de Bootstrap desde su sitio web oficial o utiliza una CDN para enlazarlos en tu proyecto. OK
+  Define un bloque {% block content %} en tus templates base y extiéndelos en los demás templates que lo necesiten utilizando {% extends 'base.html' %}. OK
 
-2. Los usuarios de cada grupo son los siguientes:
-    - Administrador
-        - admin
-        - admin2
-    - Usuario
-        - user
-        - user2
+4. - Configurar las URLs del proyecto por aplicación:
 
-3. Los permisos diferenciados de cada grupo son los siguientes:
-    - Administrador
-        - Puede ver la pagina de inicio
-        - Puede ver la pagina de usuarios
-        - Puede ver la pagina de administracion
-        - Puede registrar mas administradores
+Crea un archivo urls.py en cada una de tus aplicaciones Django. OK
+Define las URL para cada vista en los archivos urls.py correspondientes. OK
 
-    - Usuario
-        - Puede ver la pagina de inicio
-        - Puede ver la pagina de logout
+5. - Crear un archivo views.py con las vistas necesarias:
 
-4. La justificacion de los permisos diferenciados es la siguiente:
+  Crea un archivo views.py en cada una de tus aplicaciones Django. OK
+  Define las funciones de vista requeridas para manejar las solicitudes HTTP. OK
 
-# Permiso del Administrador:
+6. - Implementar un formulario utilizando Django Forms:
 
-  - Ver la página de inicio: El administrador necesita acceder a la página de inicio
-    para obtener una visión general del sistema y verificar el contenido mostrado.
+  Crea un archivo forms.py en una de tus aplicaciones Django. OK
+  Define un formulario utilizando la funcionalidad proporcionada por Django Forms. OK
 
-  - Ver la página de usuarios: El administrador debe poder acceder a la lista de usuarios registrados
-    para administrar cuentas, verificar información de usuarios y solucionar problemas relacionados con las cuentas.
+7. - Configurar un sistema de login-logout con permisos diferenciados:
 
-  - Ver la página de administración: Esta página proporciona herramientas y funciones avanzadas para administrar el sistema,
-    como la gestión de permisos, supervisión del rendimiento y configuración general.
+  Utiliza la autenticación provista por Django para implementar un sistema de login-logout. OK  
+  Define diferentes grupos de usuarios en el panel administrativo de Django y asigna permisos según tus necesidades. OK
+  Asegúrate de que las vistas correspondientes estén protegidas y solo sean accesibles para los usuarios con los permisos adecuados. OK
 
-  - Registrar más administradores: El administrador tiene el permiso para agregar y gestionar
-    otros administradores en el sistema, asegurando suficiente personal autorizado para la administración del sistema.
+8. - Implementar un sistema de registro de usuarios:
 
- # Permiso del Usuario:
+  Crea un formulario de registro de usuarios utilizando Django Forms. OK
+  Agrega un campo en el formulario para que los usuarios seleccionen el grupo al que pertenecen. OK 
+  Procesa el formulario de registro en una vista y crea nuevos usuarios con los grupos correspondientes. OK
 
-  - Ver la página de inicio: Los usuarios regulares necesitan acceder a la página de inicio para ver y utilizar
-    el contenido y las funcionalidades generales del sistema.
+9. - Actualizar tu repositorio en GitHub:
 
-  - Ver la página de cierre de sesión: Los usuarios deben tener acceso a la página de cierre de sesión para finalizar
-    su sesión de manera segura y proteger su información personal.
-
-
-5. Los usuarios se crean de forma dinamica mediante el siguiente formulario:
-    /registration/signup.html
-    /registration/susignup.htmml
-
-
-#  CREDENCIALES
-
-- Administrador
-    - gpson
-    - gpson123
-
-    - admin2
-    - letmeinforadmin
-
-- Usuario
-    - user
-    - user123
-
-    - testuser
-    - letmeinfortest    
+  Asegúrate de tener un repositorio Git inicializado en tu proyecto local. OK
+  Agrega los archivos y realiza un commit de los cambios. OK
+  Conéctate a tu repositorio remoto en GitHub y realiza un push de tus cambios. OK
 

@@ -36,12 +36,19 @@
             {% endfor %}
         </ul>
         {% endif %}
+
+        <label for="id_grupo">Grupo:</label>
+        <select id="id_grupo" name="grupo">
+            <option value="viewers">Viewers</option>
+            <option value="soporte">Soporte</option>
+        </select>
+
         <p class="text-center"><input type="submit" value="Registrar"></p>
     </form>
 </div>
 {% else %}
-<script> window.location.href = "{% url 'home' %}";
-</script>
+<script> window.location.href = "{% url 'home' %}"; </script>
 {% endif %}
+
 {% endblock %}
 ```

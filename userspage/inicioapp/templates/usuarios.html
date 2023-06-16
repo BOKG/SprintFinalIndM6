@@ -13,6 +13,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,8 @@
                 <td>{{ user.first_name }}</td>
                 <td>{{ user.last_name }}</td>
                 <td>{{ user.email }}</td>
+                <td>
+                    <a href="{% url 'editar_usuario' user.id %}" class="btn btn-warning">Editar</a>
             </tr>
             {% endfor %}
         </tbody>
